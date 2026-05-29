@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FaCalendarAlt, FaMapMarkerAlt, FaGlobe, FaHandshake, FaBriefcase, 
   FaUsers, FaBuilding, FaUserTie, FaCheckCircle, FaPhone, FaEnvelope, 
-  FaMapMarker, FaChartLine, FaBars, FaTimes, FaGlobeAmericas
+  FaMapMarker, FaChartLine, FaBars, FaTimes, FaGlobeAmericas, FaLinkedinIn, FaTwitter, FaFacebookF,  FaPhoneAlt
 } from 'react-icons/fa';
 
 // --- PREMIUM CLEAN CORPORATE THEME ---
@@ -535,19 +535,108 @@ export default function App() {
 
       </main>
 
-      {/* --- FOOTER --- */}
-      <footer className="bg-slate-950 pt-16 pb-8 text-center border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="w-14 h-14 bg-gradient-to-tr from-blue-700 to-amber-500 rounded-2xl flex items-center justify-center font-bold text-2xl text-white shadow-lg mx-auto mb-6">
-            IL
+    
+
+{/* --- FOOTER --- */}
+      <footer className="bg-[#0b1120] pt-20 pb-8 border-t border-slate-800/50 relative overflow-hidden">
+        {/* Subtle background glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-blue-600 to-transparent opacity-20"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            
+            {/* Column 1: Brand & About */}
+            <div className="lg:col-span-1">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="flex items-center justify-center w-12 h-12 bg-blue-900/30 text-blue-400 rounded-full border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+                  <FaGlobeAmericas className="text-2xl" />
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="block font-black text-xl leading-none tracking-tight text-white">
+                    INDIA LAC
+                  </span>
+                  <span className="block text-[10px] text-slate-400 font-bold tracking-[0.2em] uppercase mt-1">
+                    Forum 2026
+                  </span>
+                </div>
+              </div>
+              <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                Bridging continents through strategic partnerships. Connecting businesses, investments, and global opportunities across bilateral horizons.
+              </p>
+              {/* Social Icons */}
+              <div className="flex space-x-4">
+                {[FaLinkedinIn, FaTwitter, FaFacebookF].map((Icon, i) => (
+                  <a key={i} href="#" className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300">
+                    <Icon className="text-sm" />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Column 2: Quick Links */}
+            <div>
+              <h3 className="text-white text-sm font-bold tracking-widest uppercase mb-6">Quick Links</h3>
+              <ul className="space-y-3">
+                {['About Forum', 'Keynote Speakers', 'Event Agenda', 'Sponsorships', 'Media & Press'].map((link, i) => (
+                  <li key={i}>
+                    <a href="#" className="text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200 flex items-center group">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500/50 mr-2 group-hover:bg-blue-400 transition-all"></span>
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 3: Policy & Support */}
+            <div>
+              <h3 className="text-white text-sm font-bold tracking-widest uppercase mb-6">Resources</h3>
+              <ul className="space-y-3">
+                {['B2B Matchmaking', 'Travel Guidelines', 'Visa Information', 'Terms of Service', 'Privacy Policy'].map((link, i) => (
+                  <li key={i}>
+                    <a href="#" className="text-sm text-slate-400 hover:text-blue-400 transition-colors duration-200 flex items-center group">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500/50 mr-2 group-hover:bg-blue-400 transition-all"></span>
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 4: Contact Info */}
+            <div>
+              <h3 className="text-white text-sm font-bold tracking-widest uppercase mb-6">Contact Secretariat</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <FaMapMarkerAlt className="text-blue-500 mt-1 mr-3 text-lg shrink-0" />
+                  <span className="text-sm text-slate-400">
+                    Bhopal, Madhya Pradesh<br/>
+                    India
+                  </span>
+                </li>
+                <li className="flex items-center">
+                  <FaEnvelope className="text-blue-500 mr-3 text-sm shrink-0" />
+                  <a href="mailto:info@indialacforum.com" className="text-sm text-slate-400 hover:text-white transition-colors">
+                    info@indialacforum.com
+                  </a>
+                </li>
+                <li className="flex items-center">
+                  <FaPhoneAlt className="text-blue-500 mr-3 text-sm shrink-0" />
+                  <span className="text-sm text-slate-400">
+                    +91 (0) 123 456 7890
+                  </span>
+                </li>
+              </ul>
+            </div>
+
           </div>
-          <h2 className="text-white font-extrabold text-xl tracking-wide mb-3 uppercase">India – LAC Forum 2026</h2>
-          <p className="text-sm mb-10 max-w-xl mx-auto text-slate-400 leading-relaxed">
-            Connecting Businesses, Investments & Global Opportunities across bilateral horizons.
-          </p>
-          <div className="border-t border-slate-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 font-bold uppercase tracking-wider">
-            <p>&copy; 2026 All Rights Reserved.</p>
-            <p className="mt-4 md:mt-0">Managed under official trade council frameworks.</p>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-slate-800/80 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 font-semibold tracking-wider uppercase">
+            <p>&copy; 2026 India-LAC Trade Forum. All Rights Reserved.</p>
+            <p className="mt-4 md:mt-0 flex items-center">
+              Managed under official trade council frameworks.
+            </p>
           </div>
         </div>
       </footer>
