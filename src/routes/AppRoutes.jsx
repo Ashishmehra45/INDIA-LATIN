@@ -5,6 +5,9 @@ import Home from "../pages/Home";
 import Sectors from "../pages/Sectors";
 import Initiatives from "../pages/Initiatives";
 import Services from "../pages/Services";
+import Footer from "../components/Footer";
+import Contact from "../pages/contact";
+import Join from "../pages/Join";
 
 export default function AppRoutes() {
   return (
@@ -18,11 +21,12 @@ export default function AppRoutes() {
             <Route path="/sectors" element={<Sectors />} />
             <Route path="/initiatives" element={<Initiatives />} />
             <Route path="/services" element={<Services />} />
-       
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/join" element={<Join />} />
         </Routes>
       </main>
 
-
+      <Footer />
     </div>
   );
 }

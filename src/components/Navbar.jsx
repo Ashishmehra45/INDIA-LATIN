@@ -2,17 +2,18 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes, FaGlobeAmericas } from "react-icons/fa";
 import { NavLink, Link } from "react-router-dom";
+import logo from "../../public/INDIA-LAC.png";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
     { path: "/", label: "Home" },
-    { path: "/about", label: "About" },
+    // { path: "/#about", label: "About" },
     { path: "/initiatives", label: "Initiatives" },
     { path: "/services", label: "Services" },
     { path: "/sectors", label: "Sectors" },
-    { path: "/gallery", label: "Gallery" },
+    // { path: "/gallery", label: "Gallery" },
     { path: "/contact", label: "Contact" },
   ];
 
@@ -26,17 +27,7 @@ export default function Navbar() {
           className="flex items-center space-x-3 cursor-pointer group"
           onClick={() => setIsMobileMenuOpen(false)}
         >
-          <div className="flex items-center justify-center w-10 h-10 bg-[#8A9A86]/10 text-[#8A9A86] rounded-full group-hover:bg-[#8A9A86] group-hover:text-white transition-all duration-300 shadow-sm border border-[#8A9A86]/20">
-            <FaGlobeAmericas className="text-xl" />
-          </div>
-          <div className="flex flex-col">
-            <span className="block font-serif font-bold text-xl leading-none tracking-tight text-[#3E443C]">
-              INDIA LAC
-            </span>
-            <span className="block text-[10px] text-[#7A8476] font-bold tracking-[0.2em] uppercase mt-1">
-              Forum 2026
-            </span>
-          </div>
+        <img src={logo} alt="INDIA-LAC Logo" className="h-12 w-50" />
         </Link>
 
         {/* --- DESKTOP MENU --- */}

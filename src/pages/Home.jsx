@@ -17,7 +17,7 @@ import {
   FaRegCheckCircle,
 } from "react-icons/fa";
 
-import latin from '/public/Lac.jpg'
+import latin from "/public/Lac.jpg";
 
 // --- PRO EDITORIAL EARTHY THEME ---
 // Background: #F4F0EA (Soft Cream)
@@ -77,7 +77,6 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#F4F0EA] text-[#3E443C] font-sans selection:bg-[#8A9A86] selection:text-white overflow-x-hidden">
       <main className="pt-20">
-        
         {/* --- HERO SECTION (Kept intact) --- */}
         <section
           id="home"
@@ -100,7 +99,7 @@ export default function App() {
               className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-2.5 text-xs text-[#E8EAE6] uppercase tracking-[0.25em] mb-8 shadow-sm"
             >
               <span className="w-2 h-2 rounded-full bg-[#8A9A86] animate-pulse" />
-              <span>Global Sovereign Summit 2026</span>
+              <span>an initiative by </span>
             </motion.div>
 
             <motion.h1
@@ -110,9 +109,9 @@ export default function App() {
               viewport={{ once: true }}
               className="text-5xl sm:text-6xl md:text-8xl font-serif font-light text-white tracking-wide leading-tight"
             >
-              India – Latin America <br />
-              <span className="text-[#B6C3B1] font-medium italic">
-                & Caribbean Forum
+              India – L A C <br />
+              <span className="text-[#B6C3B1] font-medium ">
+                Trade & Investment Forum
               </span>
             </motion.h1>
 
@@ -123,64 +122,86 @@ export default function App() {
               viewport={{ once: true }}
               className="mt-8 text-lg sm:text-xl text-[#DCE0D9] max-w-2xl mx-auto font-light leading-relaxed"
             >
-              Connecting Businesses, Investments & Global Opportunities across
-              bilateral horizons through elegant execution.
+              Bridging India and the Latin America & Caribbean (LAC) region by
+              connecting businesses, capital, and global opportunities through
+              elegant execution
             </motion.p>
           </div>
         </section>
-
-      
 
         {/* =========================================
             PRO EDITORIAL ABOUT SECTION STARTS HERE
         ========================================= */}
         <div id="about" className="scroll-mt-20">
-          
           {/* 1. Who We Are (Split Editorial Layout) */}
           <section className="py-24 md:py-32 px-4 max-w-7xl mx-auto relative">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-              
               {/* Text Block */}
-              <motion.div 
+              <motion.div
                 className="lg:col-span-7 z-10"
-                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeRight}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeRight}
               >
-                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                  <h2 className="text-4xl md:text-5xl font-serif text-[#3E443C]">What We Do</h2>
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeUp}
+                >
+                  <h2 className="text-4xl md:text-5xl font-serif text-[#3E443C]">
+                    What We Do
+                  </h2>
                   <div className="w-16 h-[2px] bg-[#8A9A86] mt-2" />
                 </motion.div>
-                
+
                 <h2 className="text-4xl md:text-6xl font-serif text-[#3E443C] leading-[1.1] mb-8">
-                                   <span className="italic text-[#8A9A86]">India–LAC Corridor.</span>
+                  <span className="italic text-[#8A9A86]">
+                    India–LAC Corridor.
+                  </span>
                 </h2>
-                
+
                 <div className="space-y-6 text-lg text-[#5B6358] font-light leading-relaxed">
                   <p>
-                    The <strong className="font-semibold text-[#3E443C]">Latin America Business Council (LABC)</strong> is India's dedicated institutional platform for advancing trade, investment, and strategic partnership between India and the Latin American & Caribbean region.
+                    The{" "}
+                    <strong className="font-semibold text-[#3E443C]">
+                      India Latin America  Caribbean Trade & Investment Forum (ILACTIF)
+                    </strong>{" "}
+                    is India's dedicated institutional platform for advancing
+                    trade, investment, and strategic partnership between India
+                    and the Latin American & Caribbean region.
                   </p>
                   <p>
-                    Established to bridge two of the world's most dynamic and complementary economic blocs, we connect governments, industries, investors, and institutions across 43 nations.
+                    Established to bridge two of the world's most dynamic and
+                    complementary economic blocs, we connect governments,
+                    industries, investors, and institutions across 43 nations.
                   </p>
                   <div className="pl-6 border-l-2 border-[#8A9A86] mt-8 py-2">
                     <p className="text-xl font-serif text-[#3E443C] italic">
-                      "LABC is more than a council. It is a commitment — to structured engagement, verified opportunities, and real commercial partnerships."
+                      "LABC is more than a council. It is a commitment — to
+                      structured engagement, verified opportunities, and real
+                      commercial partnerships."
                     </p>
                   </div>
                 </div>
               </motion.div>
 
               {/* Image Block (Tall Portrait) */}
-              <motion.div 
+              <motion.div
                 className="lg:col-span-5 relative"
-                initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
               >
                 {/* Decorative Box */}
                 <div className="absolute -top-6 -right-6 w-2/3 h-full border border-[#8A9A86]/30 z-0 hidden lg:block"></div>
-                
+
                 <div className="relative z-10 w-full aspect-[4/5] overflow-hidden bg-[#EAE6DB]">
-                  <img 
+                  <img
                     src={latin}
-                    alt="Corporate Building" 
+                    alt="Corporate Building"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
                   />
                 </div>
@@ -192,15 +213,17 @@ export default function App() {
           <section className="py-24 bg-[#EAE6DB] relative">
             <div className="max-w-7xl mx-auto px-4">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8">
-                
                 {/* Left: Landscape Image */}
-                <motion.div 
+                <motion.div
                   className="w-full aspect-[4/3] lg:aspect-auto lg:h-[600px] overflow-hidden relative"
-                  initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeUp}
                 >
-                  <img 
-                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1000&q=80" 
-                    alt="Handshake Meeting" 
+                  <img
+                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1000&q=80"
+                    alt="Handshake Meeting"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
                   />
                   {/* Subtle Overlay */}
@@ -209,33 +232,48 @@ export default function App() {
 
                 {/* Right: Floating Cards */}
                 <div className="flex flex-col justify-center space-y-8 lg:-ml-24 z-10 relative">
-                  
                   {/* Mission Card */}
-                  <motion.div 
-                    initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2, duration: 0.6 }}
+                  <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2, duration: 0.6 }}
                     className="bg-[#FCFBF9] p-10 md:p-12 shadow-xl border border-[#E6E2D6]"
                   >
                     <h3 className="text-3xl font-serif text-[#3E443C] mb-4 flex items-center">
                       Our Mission
                     </h3>
                     <p className="text-[#5B6358] font-light leading-relaxed">
-                      To build a permanent, high-impact institutional bridge between India and Latin America — enabling businesses to enter new markets, governments to align on policy, and investors to unlock the immense untapped potential of the India–LAC corridor.
+                      To build a permanent, high-impact institutional bridge
+                      between India and Latin America — enabling businesses to
+                      enter new markets, governments to align on policy, and
+                      investors to unlock the immense untapped potential of the
+                      India–LAC corridor.
                     </p>
                   </motion.div>
 
                   {/* Vision Card */}
-                  <motion.div 
-                    initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.4, duration: 0.6 }}
+                  <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4, duration: 0.6 }}
                     className="bg-[#3E443C] text-white p-10 md:p-12 shadow-xl ml-0 lg:ml-12"
                   >
                     <h3 className="text-3xl font-serif text-[#F4F0EA] mb-4 flex items-center">
                       Our Vision
                     </h3>
                     <p className="text-[#DCE0D9] font-light leading-relaxed">
-                      A <strong className="font-semibold text-white">USD 100 billion</strong> India–Latin America trade relationship by 2030 — driven by sector-specific partnerships, sustained institutional engagement, and a shared commitment to South-South prosperity.
+                      A{" "}
+                      <strong className="font-semibold text-white">
+                        USD 100 billion
+                      </strong>{" "}
+                      India–Latin America trade relationship by 2030 — driven by
+                      sector-specific partnerships, sustained institutional
+                      engagement, and a shared commitment to South-South
+                      prosperity.
                     </p>
                   </motion.div>
-
                 </div>
               </div>
             </div>
@@ -249,43 +287,80 @@ export default function App() {
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10">
-              <motion.div className="text-center max-w-3xl mx-auto mb-20" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                <h2 className="text-4xl md:text-5xl font-serif text-[#3E443C]">The Opportunity We Address</h2>
+              <motion.div
+                className="text-center max-w-3xl mx-auto mb-20"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+              >
+                <h2 className="text-4xl md:text-5xl font-serif text-[#3E443C]">
+                  The Opportunity We Address
+                </h2>
                 <div className="w-16 h-[2px] bg-[#8A9A86] mx-auto mt-6 mb-8" />
                 <p className="text-xl text-[#5B6358] font-light">
-                  Bilateral trade has grown nine-fold over 25 years. Yet this figure represents only a fraction of what is structurally possible.
+                  Bilateral trade has grown nine-fold over 25 years. Yet this
+                  figure represents only a fraction of what is structurally
+                  possible.
                 </p>
               </motion.div>
 
               {/* Big Data Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
-                
                 {/* Stats */}
-                <motion.div className="bg-[#3E443C] p-12 md:p-16 text-center text-white" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeRight}>
-                  <p className="text-sm font-bold tracking-[0.2em] text-[#8A9A86] uppercase mb-4">Trade Growth (2000 - Today)</p>
+                <motion.div
+                  className="bg-[#3E443C] p-12 md:p-16 text-center text-white"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeRight}
+                >
+                  <p className="text-sm font-bold tracking-[0.2em] text-[#8A9A86] uppercase mb-4">
+                    Trade Growth (2000 - Today)
+                  </p>
                   <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
                     <div>
-                      <span className="block text-5xl md:text-6xl font-serif">2B</span>
-                      <span className="block text-xs uppercase tracking-widest text-[#B6C3B1] mt-2">USD in 2000</span>
+                      <span className="block text-5xl md:text-6xl font-serif">
+                        2B
+                      </span>
+                      <span className="block text-xs uppercase tracking-widest text-[#B6C3B1] mt-2">
+                        USD in 2000
+                      </span>
                     </div>
                     <FaArrowRight className="text-3xl text-[#8A9A86] hidden md:block" />
                     <div>
-                      <span className="block text-5xl md:text-6xl font-serif text-[#8A9A86]">50B</span>
-                      <span className="block text-xs uppercase tracking-widest text-[#B6C3B1] mt-2">USD Today</span>
+                      <span className="block text-5xl md:text-6xl font-serif text-[#8A9A86]">
+                        50B
+                      </span>
+                      <span className="block text-xs uppercase tracking-widest text-[#B6C3B1] mt-2">
+                        USD Today
+                      </span>
                     </div>
                   </div>
                 </motion.div>
 
                 {/* Bullet Points */}
-                <motion.div className="space-y-8" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
+                <motion.div
+                  className="space-y-8"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={staggerContainer}
+                >
                   {[
                     "Latin America holds the world's largest reserves of lithium, copper, and agricultural commodities.",
                     "India brings pharmaceuticals, IT services, automotive manufacturing, textiles, and renewable energy technology.",
                     "Both regions share a Global South identity, aligned multilateral positions, and a growing appetite for strategic autonomy.",
                   ].map((text, i) => (
-                    <motion.div key={i} variants={fadeUp} className="flex items-start">
+                    <motion.div
+                      key={i}
+                      variants={fadeUp}
+                      className="flex items-start"
+                    >
                       <FaRegCheckCircle className="text-2xl text-[#8A9A86] mr-5 shrink-0 mt-1" />
-                      <p className="text-lg text-[#3E443C] font-light leading-relaxed">{text}</p>
+                      <p className="text-lg text-[#3E443C] font-light leading-relaxed">
+                        {text}
+                      </p>
                     </motion.div>
                   ))}
                 </motion.div>
@@ -297,31 +372,56 @@ export default function App() {
           <section className="py-32 px-4 bg-[#EAE6DB]">
             <div className="max-w-7xl mx-auto">
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                  <h2 className="text-4xl md:text-5xl font-serif text-[#3E443C]">What We Do</h2>
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeUp}
+                >
+                  <h2 className="text-4xl md:text-5xl font-serif text-[#3E443C]">
+                    What We Do
+                  </h2>
                   <div className="w-16 h-[2px] bg-[#8A9A86] mt-6" />
                 </motion.div>
-                <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-[#5B6358] font-light max-w-sm">
-                  Converting complementarity into commerce through strategic, high-impact pillars.
+                <motion.p
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeUp}
+                  className="text-[#5B6358] font-light max-w-sm"
+                >
+                  Converting complementarity into commerce through strategic,
+                  high-impact pillars.
                 </motion.p>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                
                 {/* Left: Aesthetic Image */}
-                <motion.div className="lg:col-span-5 h-[400px] lg:h-auto overflow-hidden" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}>
-                  <img 
-                    src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80" 
-                    alt="Event Conclave" 
+                <motion.div
+                  className="lg:col-span-5 h-[400px] lg:h-auto overflow-hidden"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1 }}
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80"
+                    alt="Event Conclave"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000 grayscale-[20%]"
                   />
                 </motion.div>
 
                 {/* Right: Sleek List */}
-                <motion.div className="lg:col-span-7 flex flex-col justify-center" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
+                <motion.div
+                  className="lg:col-span-7 flex flex-col justify-center"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={staggerContainer}
+                >
                   {whatWeDo.map((item, index) => (
-                    <motion.div 
-                      key={index} 
+                    <motion.div
+                      key={index}
                       variants={fadeUp}
                       className="border-b border-[#D4D0C5] py-8 group hover:bg-[#F4F0EA] transition-colors duration-300 px-4 -mx-4"
                     >
@@ -339,7 +439,6 @@ export default function App() {
                     </motion.div>
                   ))}
                 </motion.div>
-
               </div>
             </div>
           </section>
@@ -348,31 +447,46 @@ export default function App() {
           <section className="relative py-40 px-4 flex items-center justify-center overflow-hidden">
             {/* Background Image with Parallax feel */}
             <div className="absolute inset-0 z-0">
-              <img 
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80" 
-                alt="Architecture" 
+              <img
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80"
+                alt="Architecture"
                 className="w-full h-full object-cover object-bottom"
               />
               <div className="absolute inset-0 bg-[#3E443C]/90 backdrop-blur-[2px]"></div>
             </div>
 
-            <motion.div 
-              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
               className="relative z-10 max-w-4xl mx-auto text-center"
             >
               <FaQuoteLeft className="text-4xl text-[#8A9A86] mx-auto mb-8 opacity-80" />
               <h2 className="text-3xl md:text-5xl font-serif text-white leading-tight mb-8">
-                "We are different because we are <br className="hidden md:block"/>
-                <span className="italic text-[#8A9A86]">structural, not ceremonial.</span>"
+                "We are different because we are{" "}
+                <br className="hidden md:block" />
+                <span className="italic text-[#8A9A86]">
+                  structural, not ceremonial.
+                </span>
+                "
               </h2>
               <p className="text-lg md:text-xl text-[#B6C3B1] font-light leading-relaxed max-w-3xl mx-auto">
-                Most bilateral forums create conversations. <strong className="text-white">LABC creates corridors.</strong> Every engagement we facilitate is designed to produce a tangible outcome — a partnership signed, a market entered, a policy moved, a deal closed.
+                Most bilateral forums create conversations.{" "}
+                <strong className="text-white">LABC creates corridors.</strong>{" "}
+                Every engagement we facilitate is designed to produce a tangible
+                outcome — a partnership signed, a market entered, a policy
+                moved, a deal closed.
               </p>
-              
+
               <div className="mt-12 inline-block border border-[#8A9A86] p-6 bg-white/5 backdrop-blur-sm">
                 <p className="text-sm font-bold text-white uppercase tracking-[0.2em] leading-relaxed">
-                  India and Latin America are no longer a future opportunity.<br/>
-                  <span className="text-[#8A9A86]">They are a present imperative.</span><br/>
+                  India and Latin America are no longer a future opportunity.
+                  <br />
+                  <span className="text-[#8A9A86]">
+                    They are a present imperative.
+                  </span>
+                  <br />
                   LABC is where that imperative becomes action.
                 </p>
               </div>
@@ -384,61 +498,113 @@ export default function App() {
         ========================================= */}
 
         {/* --- CONTACT & FOOTER REMAINS THE SAME --- */}
-        <section id="contact" className="py-24 bg-[#FCFBF9] px-4 scroll-mt-20 border-t border-[#E6E2D6]">
+        <section
+          id="contact"
+          className="py-24 bg-[#FCFBF9] px-4 scroll-mt-20 border-t border-[#E6E2D6]"
+        >
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <h2 className="text-4xl font-serif text-[#3E443C] uppercase tracking-widest mb-10">Contact Secretariat</h2>
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl font-serif text-[#3E443C] uppercase tracking-widest mb-10">
+                Contact Secretariat
+              </h2>
               <div className="space-y-6">
                 {/* Contact Cards */}
                 <div className="flex items-center space-x-6 bg-[#F4F0EA] border border-[#E6E2D6] p-6">
-                  <div className="w-12 h-12 bg-white text-[#8A9A86] flex items-center justify-center text-xl shrink-0 shadow-sm"><FaMapMarker /></div>
+                  <div className="w-12 h-12 bg-white text-[#8A9A86] flex items-center justify-center text-xl shrink-0 shadow-sm">
+                    <FaMapMarker />
+                  </div>
                   <div>
-                    <p className="font-bold text-[#3E443C] uppercase text-xs tracking-widest">Venue</p>
-                    <p className="text-[#5B6358] mt-1 text-sm">Pride Hotel, Indore, Madhya Pradesh, India</p>
+                    <p className="font-bold text-[#3E443C] uppercase text-xs tracking-widest">
+                      Location
+                    </p>
+                    <p className="text-[#5B6358] mt-1 text-sm">
+                      C06 At, Chhatrapati Shivaji Maharaj International Airport
+                      Mumbai, Maharashtra 400099
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-6 bg-[#F4F0EA] border border-[#E6E2D6] p-6">
-                  <div className="w-12 h-12 bg-white text-[#8A9A86] flex items-center justify-center text-xl shrink-0 shadow-sm"><FaEnvelope /></div>
+                  <div className="w-12 h-12 bg-white text-[#8A9A86] flex items-center justify-center text-xl shrink-0 shadow-sm">
+                    <FaEnvelope />
+                  </div>
                   <div>
-                    <p className="font-bold text-[#3E443C] uppercase text-xs tracking-widest">Communications</p>
-                    <p className="text-[#5B6358] mt-1 text-sm">secretariat@india-lacforum.gov.in</p>
+                    <p className="font-bold text-[#3E443C] uppercase text-xs tracking-widest">
+                      Email Address
+                    </p>
+                    <p className="text-[rgb(91,99,88)] mt-1 text-sm">
+                      office.ceo@mexicoindia.org <br /> info@mexicoindia.org
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-6 bg-[#F4F0EA] border border-[#E6E2D6] p-6">
-                  <div className="w-12 h-12 bg-white text-[#8A9A86] flex items-center justify-center text-xl shrink-0 shadow-sm"><FaPhone /></div>
+                  <div className="w-12 h-12 bg-white text-[#8A9A86] flex items-center justify-center text-xl shrink-0 shadow-sm">
+                    <FaPhone />
+                  </div>
                   <div>
-                    <p className="font-bold text-[#3E443C] uppercase text-xs tracking-widest">Hotline</p>
-                    <p className="text-[#5B6358] mt-1 text-sm">+91 (731) 4455-266 / Ext 104</p>
+                    <p className="font-bold text-[#3E443C] uppercase text-xs tracking-widest">
+                      Hotline
+                    </p>
+                    <p className="text-[#5B6358] mt-1 text-sm">
+                      +91 79991 47155
+                    </p>
                   </div>
                 </div>
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-white border border-[#E6E2D6] p-8 sm:p-10 shadow-lg">
-              <h3 className="text-2xl font-serif text-[#3E443C] uppercase tracking-widest mb-8 text-center">Official Query</h3>
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-white border border-[#E6E2D6] p-8 sm:p-10 shadow-lg"
+            >
+              <h3 className="text-2xl font-serif text-[#3E443C] uppercase tracking-widest mb-8 text-center">
+                Official Query
+              </h3>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <input required type="text" placeholder="Full Name" className="w-full bg-[#F4F0EA] border-b border-[#D4D0C5] px-4 py-3 text-sm focus:outline-none focus:border-[#8A9A86] transition-colors placeholder-[#A0A89D]" />
-                  <input required type="email" placeholder="Email Address" className="w-full bg-[#F4F0EA] border-b border-[#D4D0C5] px-4 py-3 text-sm focus:outline-none focus:border-[#8A9A86] transition-colors placeholder-[#A0A89D]" />
+                  <input
+                    required
+                    type="text"
+                    placeholder="Full Name"
+                    className="w-full bg-[#F4F0EA] border-b border-[#D4D0C5] px-4 py-3 text-sm focus:outline-none focus:border-[#8A9A86] transition-colors placeholder-[#A0A89D]"
+                  />
+                  <input
+                    required
+                    type="email"
+                    placeholder="Email Address"
+                    className="w-full bg-[#F4F0EA] border-b border-[#D4D0C5] px-4 py-3 text-sm focus:outline-none focus:border-[#8A9A86] transition-colors placeholder-[#A0A89D]"
+                  />
                 </div>
-                <input required type="text" placeholder="Subject" className="w-full bg-[#F4F0EA] border-b border-[#D4D0C5] px-4 py-3 text-sm focus:outline-none focus:border-[#8A9A86] transition-colors placeholder-[#A0A89D]" />
-                <textarea required rows="4" placeholder="Your message..." className="w-full bg-[#F4F0EA] border-b border-[#D4D0C5] px-4 py-3 text-sm focus:outline-none focus:border-[#8A9A86] resize-none transition-colors placeholder-[#A0A89D]" />
-                <button type="submit" className="w-full py-4 bg-[#3E443C] hover:bg-[#8A9A86] text-white font-bold text-xs uppercase tracking-[0.2em] transition-colors">Send Message</button>
+                <input
+                  required
+                  type="text"
+                  placeholder="Subject"
+                  className="w-full bg-[#F4F0EA] border-b border-[#D4D0C5] px-4 py-3 text-sm focus:outline-none focus:border-[#8A9A86] transition-colors placeholder-[#A0A89D]"
+                />
+                <textarea
+                  required
+                  rows="4"
+                  placeholder="Your message..."
+                  className="w-full bg-[#F4F0EA] border-b border-[#D4D0C5] px-4 py-3 text-sm focus:outline-none focus:border-[#8A9A86] resize-none transition-colors placeholder-[#A0A89D]"
+                />
+                <button
+                  type="submit"
+                  className="w-full py-4 bg-[#3E443C] hover:bg-[#8A9A86] text-white font-bold text-xs uppercase tracking-[0.2em] transition-colors"
+                >
+                  Send Message
+                </button>
               </form>
             </motion.div>
           </div>
         </section>
       </main>
 
-      {/* --- FOOTER --- */}
-      <footer className="bg-[#EAE6DB] pt-20 pb-8 border-t border-[#D4D0C5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="border-t border-[#D4D0C5] pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-[#A0A89D] font-medium tracking-wider uppercase">
-            <p>&copy; 2026 India-LAC Trade Forum. All Rights Reserved.</p>
-            <p className="mt-4 md:mt-0">Managed under official trade council frameworks.</p>
-          </div>
-        </div>
-      </footer>
+     
     </div>
   );
 }
