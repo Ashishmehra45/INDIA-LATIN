@@ -16,6 +16,7 @@ import {
   FaQuoteLeft,
   FaRegCheckCircle,
 } from "react-icons/fa";
+import API_BASE_URL from "../config/config";
 
 import latin from "/public/Lac.jpg";
 import home from "/public/home.jpeg";
@@ -64,7 +65,7 @@ export default function App() {
     setStatusMsg(null);
 
     try {
-      const response = await fetch("http://localhost:5000/api/queries", {
+      const response = await fetch(`${API_BASE_URL}/queries`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

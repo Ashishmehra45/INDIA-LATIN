@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import API_BASE_URL from "../config/config";
 
 // --- PRO EDITORIAL EARTHY THEME ---
 // Background: #FCFBF9 (Off-White/Cream)
@@ -38,33 +39,45 @@ export default function Contact() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setStatusMsg(null);
+  e.preventDefault();
+  setLoading(true);
+  setStatusMsg(null);
 
-    // API CALL (Tumhare Node.js backend ke liye)
-    try {
-      /* 
-      const response = await fetch("http://localhost:5000/api/queries", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      const data = await response.json();
-      */
+  try {
+    const response = await fetch(`${API_BASE_URL}/queries`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
-      // Dummy success for now
-      setTimeout(() => {
-        setStatusMsg({ type: "success", text: "Message sent successfully!" });
-        setFormData({ name: "", email: "", subject: "", message: "" });
-        setLoading(false);
-      }, 1500);
+    const data = await response.json();
 
-    } catch (error) {
-      setStatusMsg({ type: "error", text: "Something went wrong." });
-      setLoading(false);
+    if (!response.ok) {
+      throw new Error(data.message || "Failed to send message");
     }
-  };
+
+    setStatusMsg({
+      type: "success",
+      text: "Message sent successfully!",
+    });
+
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+  } catch (error) {
+    setStatusMsg({
+      type: "error",
+      text: error.message || "Something went wrong.",
+    });
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="bg-[#FCFBF9] text-[#3E443C] font-sans selection:bg-[#8A9A86] selection:text-white py-24 px-4 min-h-screen flex items-center justify-center">
