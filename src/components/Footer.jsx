@@ -10,37 +10,32 @@ import {
   FaMapMarkerAlt,
   FaEnvelope,
   FaPhoneAlt,
-  FaArrowRight
+  FaArrowRight,
 } from "react-icons/fa";
+import logo from "/public/INDIA-LAC.png"; // Assuming you have a logo image in assets folder
 
 export default function Footer() {
   return (
     <footer className="bg-[#EAE6DB] pt-24 pb-8 border-t border-[#D4D0C5] text-[#3E443C] font-sans selection:bg-[#8A9A86] selection:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-          
           {/* Column 1: Brand & Socials (Wider Column) */}
           <div className="lg:col-span-4">
-            <Link to="/" className="flex items-center space-x-3 mb-8 group inline-flex">
-              <div className="flex items-center justify-center w-12 h-12 bg-[#8A9A86]/10 text-[#8A9A86] rounded-full group-hover:bg-[#8A9A86] group-hover:text-white transition-all duration-300 shadow-sm border border-[#8A9A86]/20">
-                <FaGlobeAmericas className="text-2xl" />
-              </div>
-              <div className="flex flex-col">
-                <span className="block font-serif font-bold text-2xl leading-none tracking-tight text-[#3E443C]">
-                  INDIA LAC
-                </span>
-                <span className="block text-[10px] text-[#7A8476] font-bold tracking-[0.2em] uppercase mt-1">
-                  Forum 2026
-                </span>
-              </div>
+            <Link
+              to="/"
+              className="flex items-center space-x-3 cursor-pointer group"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <img src={logo} alt="INDIA-LAC Logo" className="h-12 w-50" />
             </Link>
-            
-            <p className="text-[15px] text-[#5B6358] font-light leading-relaxed mb-8 pr-4">
-              Bridging continents through strategic partnerships. The authoritative voice of the India–LAC corridor, connecting businesses, investments, and global opportunities.
+
+            <p className="text-[15px] text-[#5B6358] font-light leading-relaxed mt-4 mb-8 pr-4">
+              Bridging continents through strategic partnerships. The
+              authoritative voice of the India–LAC corridor, connecting
+              businesses, investments, and global opportunities.
             </p>
-            
+
             {/* Social Media Icons */}
             <div className="flex space-x-3">
               {[
@@ -124,40 +119,40 @@ export default function Footer() {
               <li className="flex items-start group">
                 <FaMapMarkerAlt className="text-[#8A9A86] mt-1 mr-4 text-base shrink-0" />
                 <span className="text-[15px] text-[#5B6358] font-light leading-relaxed">
-                  Pride Hotel, Indore <br />
-                  Madhya Pradesh, India
+                  C06 At, Chhatrapati Shivaji Maharaj International Airport
+                  Mumbai, Maharashtra 400099
                 </span>
               </li>
               <li className="flex items-center group">
                 <FaEnvelope className="text-[#8A9A86] mr-4 text-base shrink-0" />
                 <a
-                  href="mailto:secretariat@india-lacforum.gov.in"
+                  href="mailto:office.ceo@mexicoindia.org"
                   className="text-[15px] text-[#5B6358] font-light hover:text-[#3E443C] transition-colors"
                 >
-                  secretariat@india-lacforum.gov.in
+                  office.ceo@mexicoindia.org <br />
+                  info@mexicoindia.org
                 </a>
               </li>
               <li className="flex items-center group">
                 <FaPhoneAlt className="text-[#8A9A86] mr-4 text-base shrink-0" />
                 <span className="text-[15px] text-[#5B6358] font-light">
-                  +91 (731) 4455-266 / Ext 104
+                 +91-755-2559971
                 </span>
               </li>
             </ul>
           </div>
-
         </div>
 
         {/* Bottom Bar: Copyright & Credits */}
         <div className="border-t border-[#D4D0C5] pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-[11px] text-[#7A8476] font-bold tracking-widest uppercase">
-            &copy; {new Date().getFullYear()} India-LAC Business Council. All Rights Reserved.
+            &copy; {new Date().getFullYear()} India-LAC Business Council. All
+            Rights Reserved.
           </p>
           <p className="text-[11px] text-[#7A8476] font-bold tracking-widest uppercase">
             Managed under official trade council frameworks.
           </p>
         </div>
-        
       </div>
     </footer>
   );

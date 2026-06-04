@@ -126,7 +126,7 @@ export default function Contact() {
                   Hotline
                 </p>
                 <p className="text-[#5B6358] text-[15px] font-light leading-relaxed">
-                  +91 79991 47155
+                  +91-755-2559971
                 </p>
               </div>
             </div>

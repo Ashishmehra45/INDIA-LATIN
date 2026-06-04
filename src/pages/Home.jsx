@@ -549,7 +549,7 @@ export default function App() {
                       Hotline
                     </p>
                     <p className="text-[#5B6358] mt-1 text-sm">
-                      +91 79991 47155
+                    +91-755-2559971
                     </p>
                   </div>
                 </div>
