@@ -18,8 +18,8 @@ import {
 } from "react-icons/fa";
 import API_BASE_URL from "../config/config";
 
-import latin from "/public/Lac.jpg";
-import home from "/public/home.jpeg";
+import latin from "/public/04.webp";
+import home from "/public/l.png";
 
 // --- PRO EDITORIAL EARTHY THEME ---
 // Background: #F4F0EA (Soft Cream)
@@ -153,7 +153,7 @@ export default function App() {
               className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-2.5 text-xs text-[#E8EAE6] uppercase tracking-[0.25em] mb-8 shadow-sm"
             >
               <span className="w-2 h-2 rounded-full bg-[#8A9A86] animate-pulse" />
-              <span>an initiative by </span>
+              <span>an initiative by GIBF and MIBC</span>
             </motion.div>
 
             <motion.h1
@@ -253,7 +253,7 @@ export default function App() {
                 {/* Decorative Box */}
                 <div className="absolute -top-6 -right-6 w-2/3 h-full border border-[#8A9A86]/30 z-0 hidden lg:block"></div>
 
-                <div className="relative z-10 w-full aspect-[4/5] overflow-hidden bg-[#EAE6DB]">
+                <div className="relative z-10 w-full h-[500px] overflow-hidden bg-[#EAE6DB]">
                   <img
                     src={latin}
                     alt="Corporate Building"
@@ -553,73 +553,16 @@ export default function App() {
         ========================================= */}
 
         {/* --- CONTACT & FOOTER REMAINS THE SAME --- */}
-        {/* --- CONTACT SECTION JSX --- */}
         <section
           id="contact"
           className="py-24 bg-[#FCFBF9] px-4 scroll-mt-20 border-t border-[#E6E2D6]"
         >
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Contact Info Side */}
+          <div className="w-full max-w-5xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-serif text-[#3E443C] uppercase tracking-widest mb-10">
-                Contact Secretariat
-              </h2>
-              <div className="space-y-6">
-                <div className="flex items-center space-x-6 bg-[#F4F0EA] border border-[#E6E2D6] p-6">
-                  <div className="w-12 h-12 bg-white text-[#8A9A86] flex items-center justify-center text-xl shrink-0 shadow-sm">
-                    <FaMapMarker />
-                  </div>
-                  <div>
-                    <p className="font-bold text-[#3E443C] uppercase text-xs tracking-widest">
-                      Location
-                    </p>
-                    <p className="text-[#5B6358] mt-1 text-sm">
-                      C06 At, Chhatrapati Shivaji Maharaj International Airport
-                      Mumbai, Maharashtra 400099
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-6 bg-[#F4F0EA] border border-[#E6E2D6] p-6">
-                  <div className="w-12 h-12 bg-white text-[#8A9A86] flex items-center justify-center text-xl shrink-0 shadow-sm">
-                    <FaEnvelope />
-                  </div>
-                  <div>
-                    <p className="font-bold text-[#3E443C] uppercase text-xs tracking-widest">
-                      Email Address
-                    </p>
-                    <p className="text-[#5B6358] mt-1 text-sm">
-                      office.ceo@mexicoindia.org <br /> info@mexicoindia.org
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-6 bg-[#F4F0EA] border border-[#E6E2D6] p-6">
-                  <div className="w-12 h-12 bg-white text-[#8A9A86] flex items-center justify-center text-xl shrink-0 shadow-sm">
-                    <FaPhone />
-                  </div>
-                  <div>
-                    <p className="font-bold text-[#3E443C] uppercase text-xs tracking-widest">
-                      Hotline
-                    </p>
-                    <p className="text-[#5B6358] mt-1 text-sm">
-                      +91-755-2559971
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Form Side */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-white border border-[#E6E2D6] p-8 sm:p-10 shadow-lg"
+              className="w-full bg-white border border-[#E6E2D6] p-8 sm:p-10 shadow-lg"
             >
               <h3 className="text-2xl font-serif text-[#3E443C] uppercase tracking-widest mb-8 text-center">
                 Official Query

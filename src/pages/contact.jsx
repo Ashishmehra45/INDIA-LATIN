@@ -39,113 +39,53 @@ export default function Contact() {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  setLoading(true);
-  setStatusMsg(null);
+    e.preventDefault();
+    setLoading(true);
+    setStatusMsg(null);
 
-  try {
-    const response = await fetch(`${API_BASE_URL}/queries`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await fetch(`${API_BASE_URL}/queries`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (!response.ok) {
-      throw new Error(data.message || "Failed to send message");
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to send message");
+      }
+
+      setStatusMsg({
+        type: "success",
+        text: "Message sent successfully!",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      setStatusMsg({
+        type: "error",
+        text: error.message || "Something went wrong.",
+      });
+    } finally {
+      setLoading(false);
     }
-
-    setStatusMsg({
-      type: "success",
-      text: "Message sent successfully!",
-    });
-
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-  } catch (error) {
-    setStatusMsg({
-      type: "error",
-      text: error.message || "Something went wrong.",
-    });
-  } finally {
-    setLoading(false);
-  }
-};
+  };
 
   return (
     <div className="bg-[#FCFBF9] text-[#3E443C] font-sans selection:bg-[#8A9A86] selection:text-white py-24 px-4 min-h-screen flex items-center justify-center">
-      <div className="max-w-6xl mx-auto w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          
-          {/* --- LEFT COLUMN: CONTACT INFO --- */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeRight}
-            className="flex flex-col space-y-8"
-          >
-            {/* Green Highlighted Heading */}
-            <div className="mb-4">
-              <h2 className="inline-block bg-[#8A9A86] text-white px-5 py-2 text-2xl md:text-3xl font-serif uppercase tracking-widest shadow-sm">
-                Contact Secretariat
-              </h2>
-            </div>
+      <div className="w-full">
+        <div className="flex justify-center">
 
-            {/* Info Cards (Sharp Edges, Beige Background) */}
-            <div className="flex items-center bg-[#F4F0EA] p-6 border border-[#E6E2D6]/50 shadow-sm">
-              <div className="w-14 h-14 bg-white text-[#8A9A86] flex items-center justify-center text-xl shrink-0 shadow-sm">
-                <FaMapMarkerAlt />
-              </div>
-              <div className="ml-6">
-                <p className="font-bold text-[#3E443C] uppercase text-xs tracking-[0.15em] mb-1">
-                  Location
-                </p>
-                <p className="text-[#5B6358] text-[15px] font-light leading-relaxed">
-                  C06 At, Chhatrapati Shivaji Maharaj International Airport Mumbai,
-                  Maharashtra 400099
-                </p>
-              </div>
-            </div>
 
-            <div className="flex items-center bg-[#F4F0EA] p-6 border border-[#E6E2D6]/50 shadow-sm">
-              <div className="w-14 h-14 bg-white text-[#8A9A86] flex items-center justify-center text-xl shrink-0 shadow-sm">
-                <FaEnvelope />
-              </div>
-              <div className="ml-6">
-                <p className="font-bold text-[#3E443C] uppercase text-xs tracking-[0.15em] mb-1">
-                  Email Address
-                </p>
-                <p className="text-[#5B6358] text-[15px] font-light leading-relaxed">
-                  office.ceo@mexicoindia.org<br />
-                  info@mexicoindia.org
-                </p>
-              </div>
-            </div>
 
-            <div className="flex items-center bg-[#F4F0EA] p-6 border border-[#E6E2D6]/50 shadow-sm">
-              <div className="w-14 h-14 bg-white text-[#8A9A86] flex items-center justify-center text-xl shrink-0 shadow-sm">
-                <FaPhoneAlt />
-              </div>
-              <div className="ml-6">
-                <p className="font-bold text-[#3E443C] uppercase text-xs tracking-[0.15em] mb-1">
-                  Hotline
-                </p>
-                <p className="text-[#5B6358] text-[15px] font-light leading-relaxed">
-                  +91-755-2559971
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* --- RIGHT COLUMN: OFFICIAL QUERY FORM --- */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -185,7 +125,7 @@ export default function Contact() {
                   className="w-full bg-[#F4F0EA] px-5 py-4 text-[15px] font-light text-[#3E443C] focus:outline-none focus:ring-1 focus:ring-[#8A9A86] transition-shadow placeholder-[#A0A89D]"
                 />
               </div>
-              
+
               <input
                 required
                 type="text"
@@ -195,7 +135,7 @@ export default function Contact() {
                 placeholder="Subject"
                 className="w-full bg-[#F4F0EA] px-5 py-4 text-[15px] font-light text-[#3E443C] focus:outline-none focus:ring-1 focus:ring-[#8A9A86] transition-shadow placeholder-[#A0A89D]"
               />
-              
+
               <textarea
                 required
                 rows="5"
@@ -205,7 +145,7 @@ export default function Contact() {
                 placeholder="Your message..."
                 className="w-full bg-[#F4F0EA] px-5 py-4 text-[15px] font-light text-[#3E443C] focus:outline-none focus:ring-1 focus:ring-[#8A9A86] resize-none transition-shadow placeholder-[#A0A89D]"
               />
-              
+
               <button
                 type="submit"
                 disabled={loading}
