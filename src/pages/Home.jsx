@@ -18,6 +18,7 @@ import {
 } from "react-icons/fa";
 
 import latin from "/public/Lac.jpg";
+import home from "/public/home.jpeg";
 
 // --- PRO EDITORIAL EARTHY THEME ---
 // Background: #F4F0EA (Soft Cream)
@@ -41,6 +42,58 @@ const staggerContainer = {
 
 export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [statusMsg, setStatusMsg] = useState(null);
+
+  // --- 2. INPUT CHANGE HANDLER ---
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // --- 3. SUBMIT HANDLER (Connects to Backend) ---
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatusMsg(null);
+
+    try {
+      const response = await fetch("http://localhost:5000/api/queries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatusMsg({
+          type: "success",
+          text: "Your message has been sent successfully!",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" }); // Form clear karo
+      } else {
+        setStatusMsg({
+          type: "error",
+          text: data.message || "Failed to send message.",
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setStatusMsg({
+        type: "error",
+        text: "Server error. Please try again later.",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -84,7 +137,7 @@ export default function App() {
         >
           <div className="absolute inset-0 z-0">
             <img
-              src="https://plus.unsplash.com/premium_photo-1664474503673-5febe9ca12b9?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={home}
               alt="Conference"
               className="w-full h-full object-cover opacity-80"
             />
@@ -166,7 +219,8 @@ export default function App() {
                   <p>
                     The{" "}
                     <strong className="font-semibold text-[#3E443C]">
-                      India Latin America  Caribbean Trade & Investment Forum (ILACTIF)
+                      India Latin America Caribbean Trade & Investment Forum
+                      (ILACTIF)
                     </strong>{" "}
                     is India's dedicated institutional platform for advancing
                     trade, investment, and strategic partnership between India
@@ -498,11 +552,13 @@ export default function App() {
         ========================================= */}
 
         {/* --- CONTACT & FOOTER REMAINS THE SAME --- */}
+        {/* --- CONTACT SECTION JSX --- */}
         <section
           id="contact"
           className="py-24 bg-[#FCFBF9] px-4 scroll-mt-20 border-t border-[#E6E2D6]"
         >
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Contact Info Side */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -512,7 +568,6 @@ export default function App() {
                 Contact Secretariat
               </h2>
               <div className="space-y-6">
-                {/* Contact Cards */}
                 <div className="flex items-center space-x-6 bg-[#F4F0EA] border border-[#E6E2D6] p-6">
                   <div className="w-12 h-12 bg-white text-[#8A9A86] flex items-center justify-center text-xl shrink-0 shadow-sm">
                     <FaMapMarker />
@@ -527,6 +582,7 @@ export default function App() {
                     </p>
                   </div>
                 </div>
+
                 <div className="flex items-center space-x-6 bg-[#F4F0EA] border border-[#E6E2D6] p-6">
                   <div className="w-12 h-12 bg-white text-[#8A9A86] flex items-center justify-center text-xl shrink-0 shadow-sm">
                     <FaEnvelope />
@@ -535,11 +591,12 @@ export default function App() {
                     <p className="font-bold text-[#3E443C] uppercase text-xs tracking-widest">
                       Email Address
                     </p>
-                    <p className="text-[rgb(91,99,88)] mt-1 text-sm">
+                    <p className="text-[#5B6358] mt-1 text-sm">
                       office.ceo@mexicoindia.org <br /> info@mexicoindia.org
                     </p>
                   </div>
                 </div>
+
                 <div className="flex items-center space-x-6 bg-[#F4F0EA] border border-[#E6E2D6] p-6">
                   <div className="w-12 h-12 bg-white text-[#8A9A86] flex items-center justify-center text-xl shrink-0 shadow-sm">
                     <FaPhone />
@@ -549,13 +606,14 @@ export default function App() {
                       Hotline
                     </p>
                     <p className="text-[#5B6358] mt-1 text-sm">
-                    +91-755-2559971
+                      +91-755-2559971
                     </p>
                   </div>
                 </div>
               </div>
             </motion.div>
 
+            {/* Form Side */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -565,46 +623,71 @@ export default function App() {
               <h3 className="text-2xl font-serif text-[#3E443C] uppercase tracking-widest mb-8 text-center">
                 Official Query
               </h3>
-              <form className="space-y-6">
+
+              {/* Alert Message Box */}
+              {statusMsg && (
+                <div
+                  className={`p-4 mb-6 text-sm font-bold text-center border ${statusMsg.type === "success" ? "bg-[#8A9A86]/20 text-[#3E443C] border-[#8A9A86]" : "bg-red-50 text-red-600 border-red-200"}`}
+                >
+                  {statusMsg.text}
+                </div>
+              )}
+
+              {/* Form mapped to State */}
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <input
                     required
                     type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     placeholder="Full Name"
                     className="w-full bg-[#F4F0EA] border-b border-[#D4D0C5] px-4 py-3 text-sm focus:outline-none focus:border-[#8A9A86] transition-colors placeholder-[#A0A89D]"
                   />
                   <input
                     required
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="Email Address"
                     className="w-full bg-[#F4F0EA] border-b border-[#D4D0C5] px-4 py-3 text-sm focus:outline-none focus:border-[#8A9A86] transition-colors placeholder-[#A0A89D]"
                   />
                 </div>
+
                 <input
                   required
                   type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   placeholder="Subject"
                   className="w-full bg-[#F4F0EA] border-b border-[#D4D0C5] px-4 py-3 text-sm focus:outline-none focus:border-[#8A9A86] transition-colors placeholder-[#A0A89D]"
                 />
+
                 <textarea
                   required
                   rows="4"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Your message..."
                   className="w-full bg-[#F4F0EA] border-b border-[#D4D0C5] px-4 py-3 text-sm focus:outline-none focus:border-[#8A9A86] resize-none transition-colors placeholder-[#A0A89D]"
                 />
+
                 <button
                   type="submit"
-                  className="w-full py-4 bg-[#3E443C] hover:bg-[#8A9A86] text-white font-bold text-xs uppercase tracking-[0.2em] transition-colors"
+                  disabled={loading}
+                  className={`w-full py-4 text-white font-bold text-xs uppercase tracking-[0.2em] transition-colors ${loading ? "bg-[#5B6358] cursor-wait" : "bg-[#3E443C] hover:bg-[#8A9A86]"}`}
                 >
-                  Send Message
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </motion.div>
           </div>
         </section>
       </main>
-
-     
     </div>
   );
 }

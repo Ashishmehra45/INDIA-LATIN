@@ -96,7 +96,7 @@ export default function Contact() {
                   Location
                 </p>
                 <p className="text-[#5B6358] text-[15px] font-light leading-relaxed">
-                  C06 At, Chhatrapati Shivaji Maharaj International Airport Mumbai, <br />
+                  C06 At, Chhatrapati Shivaji Maharaj International Airport Mumbai,
                   Maharashtra 400099
                 </p>
               </div>
